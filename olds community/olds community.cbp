@@ -41,6 +41,10 @@
 			<Option compilerVar="CC" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="user_manage.c">
+			<Option compilerVar="CC" />
+			<Option target="Debug" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

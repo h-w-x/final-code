@@ -10,8 +10,8 @@ struct House{           //住房
     unsigned int ID;    //地址，如：23456->2单元D区4楼56号，获取‘区’的方法是'A'+(ID/1000)%10
     unsigned int owner_ID;//户主ID，未购买初始化为0
     unsigned int user_ID;//住户ID，不入住初始化为0
-    unsigned int fee;   //月租金，不出租初始化为0
-    unsigned int fee_m; //用户要求的最高租金
+    unsigned int fee;   //月租金，购买前为总价格，不出租初始化为0
+    unsigned int fee_m; //用户要求的最高租金，已出租初始化为0
     struct House* next;
 };
 
@@ -52,5 +52,6 @@ void wtset( set *head );
 owner *mkowner();
 void wtowner( owner *head );
 
+void pt_1_house( house *p );
 
 #endif // HEAD_H_INCLUDED

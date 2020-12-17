@@ -103,10 +103,8 @@ void wtuser( user *head ){        //write the user linked list into user.dat the
 }
 
 
-
 set *mkset(){                       //read set data from set.dat and creat a linked list ,return its head pointer
                                     //>>>Attention: the first node in the list _IS_NOT_ data !<<<
-
 
     FILE *fp ;
     fp = fopen("set.dat", "rb");
@@ -162,7 +160,7 @@ owner *mkowner(){                       //read owner data from owner.dat and cre
 
     owner tmp ;
     fread( &tmp , sizeof(owner) , 1 , fp );
-    *pnew = tmp ;
+    *pnew = tmp ;void pt_1_house( house *p );
     while( !feof(fp) ){
         pnew->next = (owner*)malloc(sizeof(owner));
         pnew = pnew->next ;
@@ -194,3 +192,7 @@ void wtowner( owner *head ){        //write the owner linked list into owner.dat
     fclose(fp);
 }
 
+void pt_1_house( house *p ){
+    printf("\t\t%-7s   %-25s  %-15s %-15s %-15s\n","Area","Address","Household ID","Resident ID","Monthly rent");
+    printf("\t\t%3uM^2    No.%d %d/F Area %c Unit %-2d   %05u           %05u           %4u Yuan\n", p->room , p->ID%100 , p->ID/100%10 , 'A' + p->ID/1000%10 , p->ID/10000 , p->owner_ID , p->user_ID , p->fee );
+}
