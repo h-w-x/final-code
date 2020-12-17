@@ -43,8 +43,14 @@ typedef struct Set set ;
 typedef struct User user ;
 typedef struct Owner owner ;
 
-
-
+house *mkhouse();
+void wthouse( house *head );
+user *mkuser();
+void wtuser( user *head );
+set *mkset();
+void wtset( set *head );
+owner *mkowner();
+void wtowner( owner *head );
 
 
 #endif // HEAD_H_INCLUDED
