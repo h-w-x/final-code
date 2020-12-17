@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1608038262 source:c:\users\darxs\desktop\final code\olds community\pre-processing.c
+	"head.h"
+
+1608038262 c:\users\darxs\desktop\final code\olds community\head.h
+	<stdio.h>
+	<stdlib.h>
+
