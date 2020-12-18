@@ -194,5 +194,18 @@ void wtowner( owner *head ){        //write the owner linked list into owner.dat
 
 void pt_1_house( house *p ){
     printf("\t\t%-7s   %-25s  %-15s %-15s %-15s\n","Area","Address","Household ID","Resident ID","Monthly rent");
-    printf("\t\t%3uM^2    No.%d %d/F Area %c Unit %-2d   %05u           %05u           %4u Yuan\n", p->room , p->ID%100 , p->ID/100%10 , 'A' + p->ID/1000%10 , p->ID/10000 , p->owner_ID , p->user_ID , p->fee );
+    printf("\t\t%3uM^2    No.%-2d %d/F Area %c Unit %-2d   %05u           %05u           %4u Yuan\n", p->room , p->ID%100 , p->ID/100%10 , 'A' + p->ID/1000%10 , p->ID/10000 , p->owner_ID , p->user_ID , p->fee );
+}
+
+void pt_all_house( house *p ){
+    p = p->next ;
+    if( p == NULL ){
+        printf("\t\tNo house!\n");
+        return ;
+    }
+    printf("\t\t%-7s   %-25s  %-15s %-15s %-15s\n","Area","Address","Household ID","Resident ID","Monthly rent");
+    while( p!= NULL){
+        printf("\t\t%3uM^2    No.%-2d %d/F Area %c Unit %-2d   %05u           %05u           %4u Yuan\n", p->room , p->ID%100 , p->ID/100%10 , 'A' + p->ID/1000%10 , p->ID/10000 , p->owner_ID , p->user_ID , p->fee );
+        p = p->next ;
+    }
 }
